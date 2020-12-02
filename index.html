@@ -1,0 +1,177 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BWMR Table Generator</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script src="dom-to-image.js"></script>
+
+    <script src="langdrawer.js"></script>
+    <script src="translations.js"></script>
+    
+    <script src="script.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1 id="site-title"></h1>
+            <p id="site-subtitle" style="padding-top: 1em;"></p>
+            <div id="lang-buttons" class="text-muted" style="margin-top: -1em;"></div>
+
+        </div>
+
+        <div class="section">
+
+            <form name="tablePropertiesForm" onsubmit="return false">
+                <div id="table-properties" class="section-header"></div>
+
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <input id="table-prop-number" name="number" type="number" class="form-control">
+                    </div>
+                    <div class="col">
+                        <input id="table-prop-name" name="name" type="text" class="form-control">
+                    </div>
+                    <div class="col">
+                        <button id="table-prop-save" style="width: 100%;" class="btn btn-secondary"
+                            onclick="validateTableProperties(tablePropertiesForm)"></button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+        <div class="section">
+
+            <form name="addEntryForm" onsubmit="return false">
+                <div id="add-entries" class="section-header"></div>
+
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <input id="entry-date" name="date" type="text" class="form-control">
+                    </div>
+                    <div class="col">
+                        <input id="entry-account-number" name="accountNumber" type="number" class="form-control">
+                    </div>
+                    <div class="col">
+                        <input id="entry-account-name" name="accountName" type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div style="padding-top: 1em;" class="row">
+
+                    <div class="col">
+                        <input id="entry-debit" name="debit" type="number" class="form-control">
+                    </div>
+
+                    <div class="col">
+                        <input id="entry-credit" name="credit" type="number" class="form-control">
+                    </div>
+
+                </div>
+
+                <div style="padding-top: 1em;" class="row">
+
+                    <div class="col">
+                        <button id="entry-reset-form" style="width: 100%;" type="button" onclick="addEntryForm.reset()"
+                            class="btn btn-secondary"></button>
+                    </div>
+
+                    <div class="col">
+                        <button id="entry-add-entry" style="width: 100%;" type="submit" onclick="addEntry(addEntryForm)"
+                            class="btn btn-secondary"></button>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <div class="bwmr-table" id="bwmr-table">
+
+            <div id="bwmr-table-dwl" class="bwmr-table-dwl">
+
+                <div class="table-header">
+                    <div class="table-spacer" style="padding-right: 4em;"></div>
+                    <div id="table-account-name">&nbsp;</div>
+                    <div class="table-spacer"></div>
+                    <div class="table-account-number" id="table-account-number" style="padding-right: 1em;">&nbsp;</div>
+                </div>
+
+                <div class="table-body">
+
+                    <div id="table-entries">
+
+                        <!-- Entries here -->
+
+                    </div>
+
+                    <div id="table-sum">
+
+                        <!-- Sum here -->
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="section" style="padding-top: 6em;">
+            <div id="actions-title" class="section-header"></div>
+
+            <div class="row">
+
+                <div class="col">
+                    <button id="actions-download" style="width: 100%;" onclick="downloadAsPNG()"
+                        class="btn btn-secondary"></button>
+                </div>
+
+                <div class="col">
+                    <button id="actions-import" style="width: 100%;" onclick="importFromJson()"
+                        class="btn btn-secondary"></button>
+                </div>
+
+            </div>
+
+            <div style="padding-top: 1em;" class="row">
+
+                <div class="col">
+                    <button id="actions-reset" style="width: 100%;" onclick="resetTable()"
+                        class="btn btn-secondary"></button>
+                </div>
+
+                <div class="col">
+                    <button id="actions-export" style="width: 100%;" onclick="exportToJson()"
+                        class="btn btn-secondary"></button>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="footer-note text-secondary">
+            <b id="footer-note"></b><span id="footer-note-text"></span></div>
+        <div class="footer-credits text-dark">
+            <b id="footer-site-name"></b><span id="footer-copyright-text"></span>
+            <a id="footer-bug-report"
+                href="mailto:hello@laurensk.at?subject=BWMR%20Table%20Generator%20-%20Bug%2FIssue%20Report"></a>
+        </div>
+
+    </div>
+</body>
+
+</html>

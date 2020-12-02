@@ -1,0 +1,126 @@
+.container {
+    margin: auto;
+}
+
+.header {
+    padding-top: 3em;
+    text-align: center;
+}
+
+.section-header {
+    font-weight: bold;
+    padding-bottom: 1em;
+}
+
+.section {
+    padding-top: 4em;
+    margin: auto;
+    width: 700px;
+}
+
+.bwmr-table {
+    padding-top: 5em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.bwmr-table-dwl {
+    background-color: white;
+    padding: 10px;
+}
+
+.table-header {
+    display: flex;
+    position: relative;
+    margin: auto;
+    width: 700px;
+    height: 35px;
+    line-height: 35px;
+    border: 1.5px solid black;
+}
+
+.table-spacer {
+    flex-grow: 1;
+  }
+
+.table-account-number {
+    width: 4em;
+    text-align: right;
+}
+
+.table-body {
+    margin: auto;
+    width: 700px;
+}
+
+.table-entry {
+    display: flex;
+    transition: 0.2s;
+}
+
+.table-realentry:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+}
+
+.entry-date {
+    text-align: right;
+    width: 80;
+    border-left: 1.5px solid black;
+    border-right: 1.5px solid black;
+    padding-right: 7px;
+}
+
+.entry-account {
+    width: 300px;
+    padding-left:7px;
+    border-right: 1.5px solid black;
+}
+
+.entry-space {
+    width: 50px;
+    padding-left:7px;
+    border-right: 1.5px solid black;
+}
+
+.entry-debit {
+    width: 135px;
+    text-align: right;
+    border-right: 1.5px solid black;
+    padding-right: 7px;
+}
+
+.entry-credit {
+    width: 135px;
+    text-align: right;
+    border-right: 1.5px solid black;
+    padding-right: 7px;
+}
+
+.entries-sum {
+    border-top: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+}
+
+.entries-sum-line {
+    padding-left: 430px;
+}
+
+.entries-sum-border {
+    padding-top: 5px;
+    width: 270;
+    border-bottom: 1.5px solid black;
+}
+
+.footer-note {
+    padding-top: 6em;
+    margin: auto;
+    width: 700px;
+}
+
+.footer-credits {
+    padding-top: 5px;
+    margin: auto;
+    width: 700px;
+    padding-bottom: 3em;
+}
